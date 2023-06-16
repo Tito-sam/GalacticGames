@@ -1,0 +1,22 @@
+<%- include('./partials/header.ejs',{title:'Inicio'}) %> 
+        <div class="main">
+            <div class="main-principal">
+                <h2>Juegos con mejor Rating</h2>
+                <div class="main-ventas mv1">
+                    <button class="boton-main btn-izq-1" onclick="mover_izq(seccion_1,btn_izq1,btn_der1)"><i class="fa-solid fa-angle-left"></i></button>
+                    <button class="boton-main btn-der-1 btn-fin-1" onclick="mover_der(seccion_1, btn_der1, btn_izq1)"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            
+                <h2>Juegos mas Baratos</h2>
+                <div class="main-ventas mv2">
+                    <button class="boton-main btn-izq-2" onclick="mover_izq(seccion_2, btn_izq2, btn_der2)"><i class="fa-solid fa-angle-left"></i></button>
+                    
+                    <button class="boton-main btn-der-2 btn-fin-2" onclick="mover_der(seccion_2, btn_der2, btn_izq2)"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+        </div>
+        
+
+<script src="Resource/js/obtenerjuegosIndex.js"></script>
+
+<%- include('./partials/footer.ejs')  %> 

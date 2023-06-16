@@ -1,0 +1,41 @@
+<%- include('./partials/header.ejs',{title:'Consolas'}) %> 
+        <div class="main-consolas">
+            <h2>Juegos para Consolas</h2>
+                <div class="menu-clasificacion">
+                    <ul class="menu-ul">
+                        <li class="li-clasificacion">
+                            <button class="btn-clasificacion" id="btn-categoria">
+                                Categoria
+                                <ul class="lista-clasificacion" id="ul-categoria">
+                                                               
+                                </ul>
+                            </button>
+                        </li>
+                        <li class="li-clasificacion">
+                            <button class="btn-clasificacion" id="btn-consola-so">
+                                Consola
+                                <ul class="lista-clasificacion" id="ul-consola">
+                                                                
+                                </ul>
+                            </button>
+                            
+                        </li>
+                        <li class="li-clasificacion">
+                            <button class="btn-clasificacion" id="btn-precio">
+                                Precio
+                                <ul class="lista-clasificacion" id="ul-precio">
+                                    <li class="li-precio" id="bajo"><a>Menos de 100000 COP</a></li>
+                                    <li class="li-precio" id="medio_bajo"><a>Entre 100000 COP y 25000 COP</a></li>
+                                    <li class="li-precio" id="medio_alto"><a>Entre 250000 COP y 400000 COP</a></li>
+                                    <li class="li-precio" id="alto"><a>Mas de 400000 COP</a></li>                                  
+                                </ul>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="juegos-consolas j-c" id="content-agregar-carrito">
+                    
+                </div>
+       </div>
+        <script src="/Resource/js/cargarJuegosC.js"></script>
+<%- include('./partials/footer.ejs')  %> 

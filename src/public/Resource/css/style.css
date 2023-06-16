@@ -1,0 +1,919 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(19, 23, 75);
+}
+
+.block {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;        
+    z-index: 50;       
+    background: rgba(0,0,0,0.3)repeat; 
+}
+
+header {
+    background-color: rgb(24, 44, 68);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header img {
+    margin: 10px 30px;
+    border-radius: 50px;
+    width: 200px;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #eee;
+    font-size: 60px;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 35px;
+    text-align: center;
+}
+
+h1 a {
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #eee;
+    font-size: 60px;
+    text-decoration: none;
+}
+
+.menu {
+    border-radius: 4px;
+    margin: 20px 50px;
+    background-color: rgb(34, 58, 85);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu li {
+    list-style-type: none;
+}
+
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 25px;
+    padding: 20px 50px;
+}
+
+.menu li a:hover {
+    transition: all 0.3s;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgb(49, 94, 148);
+}
+
+.carrito-content {
+    display: none;
+    margin: 3px;
+    position: absolute;
+    right: 47px;
+    padding: 4px;
+    width: 300px;
+    background-color: rgb(34, 58, 85);
+    margin-top: 0;
+    margin-left: 0;
+    transition: all 0.3s d;
+}
+.carrito-content h2 {
+    font-size: 35px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    color: white;
+    padding: 5px;
+}
+
+#span-carrito {
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.btn-carrito:hover .carrito-content {
+    display:block;
+}
+
+.productos-carrito {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-car {
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+    align-items: center;
+}
+
+.menu .a-car  {
+    display: inline-block;
+    padding: 0;
+}
+
+.p-car img {
+    padding: 0;
+    display: inline-block;
+    width: 100px;
+    border-radius: 4px;
+}
+
+.p-car .img-a {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 150px;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.p-car .borrar-curso {
+    display: inline-block;
+    width: 30px;
+    border-radius: 4px;
+    border: solid 2px black;
+}
+
+.p-car .p {
+    height: 90%;
+    border-left: 2px solid black;
+    padding: 5px;
+    color: white;
+}
+
+#vaciar-carrito {
+    text-align: center;
+    margin: 15px;
+    background-color: #58c;
+    display: inline-block;
+    padding: 15px;
+    font-size: 25px;
+    width: 80%;
+    color: white;
+    border-radius: 4px;
+    margin-left: 30px;
+}
+
+#vaciar-carrito:hover {
+    background-color: rgb(71, 110, 160);
+    cursor: pointer;
+
+}
+
+
+/* Main */
+
+.main {
+    display: flex;
+}
+
+.main-principal {
+    
+    padding: 20px 50px;
+    width: 100%;
+}
+
+.main-principal h2 {
+    font-size: 30px;
+    margin: 10px;
+    color: rgb(233, 233, 233);
+}
+.main-ventas {
+    width: 90%;
+    border-radius: 4px;
+    display: flex;
+    background-color: rgb(44, 52, 78);
+    padding: 30px;
+    margin: 10px 5px;
+    justify-content: space-around;
+}
+
+.juegos {
+    margin: 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background-color: rgb(31, 35, 49);
+    height: 400px;
+    width: 280px;
+    transition: all 0.5s;
+}
+
+.juegos img {
+    min-width: 200px;
+    width: 280px;
+    height: 280px;
+    transition: all 0.5s;
+}
+
+.juegos:hover {
+    height: 430px;
+    width: 300px;
+    position: relative;
+}
+
+.juegos:hover img{
+    width: 300px;
+    height: 300px;
+}
+
+.juegos p {
+    color: #58c;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.disactive {
+    display: none;
+    transition: all 0.4s;
+}
+
+
+
+.boton-main {
+    background-color: rgba(80, 133, 202, 0.4);
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.boton-main:hover {
+    background-color: rgba(69, 114, 173, 0.4);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.btn-disactive {
+    transition: all 0.5s;
+    background-color:  rgba(8, 55, 121, 0.2);
+    color: #ccc;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    font-size: 30px;
+    text-align: center;
+    cursor: not-allowed;
+    border: 1px solid grey;
+}
+
+
+footer {
+    width: 100%;
+    background-color: rgb(22, 59, 105);
+}
+
+footer p {
+    color: #fff;
+    padding: 15px;
+    font-size: 20px;
+}
+
+footer ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer ul li {
+    margin: 10px;
+    list-style-type: none;
+}
+footer ul li a {
+    text-decoration: none;
+    color: #aaa;
+}
+
+footer ul li a:hover {
+    color: #ddd;
+}
+
+/* Info*/
+
+.main-info {
+    padding: 20px 100px;
+}
+
+.info {
+    margin: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(61, 61, 202);
+    width: 90%;
+    color: #ccc;
+}
+
+.info h2 {
+    text-align: center;
+    
+}
+
+
+/* Info juego */
+
+.info-j {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.content-juego {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border: 4px solid rgb(59, 59, 59);
+    margin: 20px;
+    border-radius: 5px;
+    background-color: rgb(79, 111, 153);
+}
+
+.imagen-juego {
+    width: 100%;
+    height: auto;
+}
+
+
+.imagen-juego img {
+    margin: 3px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.datos-juego {
+    margin:10px;
+    padding: 10px;
+    border: solid 3px rgba(35, 50, 99,0.3);
+    border-radius: 5px;
+}
+
+.datos-juego h2 {
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+}
+
+.datos-juego p {
+    font-size: 20px;
+    color: #ddd;
+    margin: 30px 5px; 
+}
+
+.datos-juego button {
+    background-color: rgb(138, 173, 219);
+    margin: 25px 5px;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.info-ad {
+    width: 80%;
+    padding: 20px;
+    background-color: rgb(151, 185, 229);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+
+/* Carrito */
+
+.main-carrito {
+    margin: 20px;
+    display: grid;
+    background-color: rgb(29, 71, 126);
+    padding: 5px;
+    border-radius: 3px;
+    grid-template-rows: 80px 3fr;
+}
+
+.main-carrito h2 {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    margin: 10px;
+    border-bottom: 3px rgb(194, 194, 194) inset;
+}
+
+.content-carrito {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 70px 3fr;
+}
+
+.content-carrito h2 {
+    font-size: 35px;
+    text-align: start;
+    border: none;
+}
+
+.productos {
+    padding: 10px;
+    margin: 10px;
+    border: solid #333 2px;
+    border-radius: 3px;
+}
+
+.cantidad-juegos {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.producto-carrito {
+    border: 2px solid black;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: center;
+}
+
+.producto-carrito .img-a-pag {
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+.producto-carrito .img-a-pag img {
+    padding: 10px;
+    width: 300px;
+    height: 90%;
+}
+.producto-carrito .p-pag {
+    padding: 5px;
+    color: white;
+    align-items: center;
+    font-size: 30px;
+}
+
+.producto-carrito .borrar-curso-pag {
+    display: flex;
+    color: black;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-left: 1px solid black;
+    height: 100%;
+    width: 100%;
+    font-size: 40px;
+    transition: all 0.3s;
+}
+
+.producto-carrito .borrar-curso-pag:hover {
+    color: rgb(65, 65, 65);
+    background-color: #58c;
+}
+
+.productos p {
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    color: #eee;
+}
+
+#pagar {
+    border: none;
+    border-radius: 4px;
+    margin: 10px;
+    width: 100px;
+    padding: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+#pagar:hover{
+    color: #222;
+    background-color: #ccc;
+}
+
+.pagado {
+    color: #999;
+    font-size: 30px;
+    padding: 10px;
+}
+
+/* Consolas y PC */
+
+.main-consolas {
+    width: 100%;
+    display:grid;
+    justify-content: center;
+}
+
+.main-consolas h2 {
+    margin: 5px;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+
+.menu-clasificacion {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.menu-clasificacion .menu-ul {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #58c;
+    border-radius: 4px;
+}
+
+
+.li-clasificacion {
+    margin: 10px;
+    list-style-type: none;
+    width: 200px;
+    height: auto;
+    text-align: center;
+}
+
+.menu-clasificacion .btn-clasificacion {
+    display: inline-block;
+    width: auto;
+    border: none;
+    font-size: 18px;
+    border-radius:3px;
+    background-color: #339;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.3s;
+}
+
+.btn-clasificacion:hover {
+    background-color: rgb(32, 32, 161);
+    color: #ccc;
+    cursor: pointer;
+}
+
+
+.lista-clasificacion {
+    margin: 5px;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    background-color: #339;
+    display: none;
+    transition: all 0.3s;
+}
+
+#btn-categoria:hover #ul-categoria {
+    display: inline-block;
+}
+
+#btn-consola-so:hover #ul-so, #btn-consola-so:hover #ul-consola  {
+    display: inline-block;
+}
+
+#btn-precio:hover #ul-precio {
+    display: inline-block;
+}
+
+.lista-clasificacion li {
+    list-style-type: none;
+    width: 190px;
+    margin: none;
+    display: inline-block;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+.lista-clasificacion li:hover {
+    background-color: rgb(43, 43, 128);
+}
+
+.lista-clasificacion li a {
+    width: 50px;
+    text-decoration: none;
+    color: white;
+}
+
+.lista-clasificacion li:hover a {
+    color: #aaa;
+}
+
+.juegos-consolas, .j-pc {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.juego-consola, .juego-pc {
+    display: inline-block;
+    margin: 20px;
+}
+
+.juegos-c, .juegos-pc {
+    background-color: #58c;
+    border-radius: 5px;
+    width: 280px;
+    height: 400px;
+    transition: all 0.3s;
+}
+
+.juegos-c img, .juegos-pc img  {
+    width: 280px;
+    height: 250px;
+    transition: all 0.3s;
+}
+.juegos-c:hover, .juegos-pc:hover {
+    width: 300px;
+}
+
+.juegos-c:hover img, .juegos-pc:hover img {
+    width: 300px;
+}
+
+.juegos-c p, .juegos-pc p {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.juegos-c button, .juegos-pc button {
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #339;
+    color: white;
+    transition: all 0.3s;
+}
+
+.juegos-c button:hover,.juegos-pc button:hover {
+    background-color: rgb(70, 70, 201);
+    color:#ddd;
+}
+
+
+/* Iniciar Sesion */
+
+.cuenta {
+    width: 100%;
+    height: 100%;
+}
+
+.login, .Register {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-self: center;
+}
+
+.iniciar-sesion, .registrese {
+    margin: 20px;
+    padding: 20px;
+    background-color: #333;
+    width: 500px;
+    height: auto;
+    text-align: center;
+}
+
+.registrese {
+    height: auto;
+}
+.iniciar-sesion input, .registrese input {
+    font-size: 20px;
+    width: 400px;
+    height: 40px;
+    margin: 15px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+.iniciar-sesion label, .registrese label {
+    font-size: 20px;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+}
+
+.iniciar-sesion input[type="button"], .registrese input[type="button"] {
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.iniciar-sesion a, .registrese a {
+    margin: 20px;
+    font-size: 20px;
+    display: block;
+    padding: 10px;
+    color: #ddd;
+}
+
+.error-login-register {
+    color: rgb(207, 66, 66);
+    font-size: 20px;
+    
+}
+
+
+/* Usuario */
+
+.user {
+    background-color: rgb(45, 45, 100);
+    width: auto;
+    height: auto;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 20px;
+    align-items: center;
+}
+
+.datos_usuario h2{
+    margin: 10px;
+    color: white;
+    font-size: 35px;
+}
+
+.info_user {
+    margin: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.actualizar_datos {
+    padding: 20px;
+    background-color: #333;
+    width: 90%;
+    align-items: center;
+    margin: 0;
+    height: auto;
+    border-radius: 5px;
+}
+
+.actualizar_datos h2 {
+    color: white;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.actualizar_datos label {
+    font-size: 20px;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+}
+
+.actualizar_datos input {
+    font-size: 20px;
+    width: 90%;
+    height: 40px;
+    margin: 15px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+.actualizar_datos input[type="button"] {
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.actualizar_datos input[type="button"]:hover {
+    transition: all 0.3s;
+    background-color: #aaa;
+    color: black;
+}
+
+.ok-update {
+    color: white;
+    font-size: 24px;
+    padding: 5px;
+}
+
+.error-update {
+    color: red;
+    font-size: 24px;
+    padding: 5px;
+}
+
+#gestionar-juegos {
+    text-align: center;
+    display: block;
+    padding: 5px;
+    padding-bottom: 0;
+    background-color: white;
+    text-decoration: none;
+    margin: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    width: 150px;
+    height: 25px;
+    color: black;
+    transition: all 0.3s;
+}
+
+#gestionar-juegos:hover {
+    background-color: #aaa;
+    color: black;
+}
+
+#Cerrar_Sesion {
+    border: none;
+    border-radius: 4px;
+    margin: 10px;
+    width: 100px;
+    padding: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+#Cerrar_Sesion:hover {
+    background-color: #aaa;
+    color: black;
+}
+/* Error pagina*/
+
+.error h1 {
+    display: inline-block;
+    padding: 20px;
+    margin: 0;
+}
+
+.error h2 {
+    margin: 0;
+    color: white;
+    font-size: 30px;
+    padding: 25px;
+    padding-top: 0;
+}
+
+/*CRUD JUEGOS*/
+
+
+.paginaJuegos {
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    width: 90%;
+    border-radius: 5px;
+    background-color: #339;
+}
+
+.paginaJuegos h2 {
+    font-size: 30px;
+    color: white;
+}
+
+.paginaJuegos label {
+    font-size: 20px;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+}
+
+.paginaJuegos input, .paginaJuegos select {
+    font-size: 20px;
+    display: inline-block;
+    width: 400px;
+    height: 40px;
+    margin: 15px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+.paginaJuegos input[type="button"] {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.paginaJuegos input[type="button"]:hover {
+    background-color: #aaa;
+    color: black;
+}

@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs', {title:'Usuario'}) %> 
+    <div class="user">
+        <div class="datos_usuario">
+            
+        </div>
+        <div class="actualizar_datos">
+            <h2>Actualizar datos</h2>
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" placeholder="usuario" id="usuario">
+            <label for="nombres">Nombres</label>
+            <input type="text" placeholder="Nombres" name="nombres" id="nombres">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Email" name="email" id="email">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password">
+            <input type="button" value="Enviar" id="btn_actualizar_datos">
+        </div>
+        <% if(user.tipo_user == 'admin') { %> 
+        <a href="/crudJuegos" id="gestionar-juegos">Gestionar juegos</a>
+        <% } %> 
+    <button id="Cerrar_Sesion">Cerrar Sesion</button>        
+    </div>
+    <script src="/Resource/js/cerrarSesion.js"></script>
+    <script src="/Resource/js/actualizarDatos.js"></script>
+<%- include('./partials/footer.ejs') %> 

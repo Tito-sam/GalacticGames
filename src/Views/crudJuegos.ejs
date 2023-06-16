@@ -1,0 +1,50 @@
+<%- include('./partials/header.ejs',{title:'Administrar Juegos'}) %> 
+    <div class="paginaJuegos">
+        <div class="crearJ">
+            <h2>Crear Juego</h2>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+            <label for="slug">Slug</label>
+            <input type="text" name="slug">
+            <label for="precio">Precio</label>
+            <input type="number" name="precio">
+            <label for="rating">Rating</label>
+            <input type="number" name="rating">
+            <label for="imagen">Url imagen</label>
+            <input type="text" name="imagen">
+            <input type="button" name="enviar" value="enviar" id="enviarNuevoJuego">
+        </div>
+        <div class="actualizarJ">
+            <h2>actualizar Juego</h2>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+            <label for="slug">Slug</label>
+            <input type="text" name="slug">
+            <label for="precio">Precio</label>
+            <input type="number" name="precio">
+            <label for="rating">Rating</label>
+            <input type="number" name="rating">
+            <label for="imagen">Url imagen</label>
+            <input type="text" name="imagen">
+            <input type="button" name="enviar" value="enviar" id="enviarNuevosDatos">
+        </div>
+        <div class="CategoriasJuegos">
+            <h2>Unir categorias</h2>
+            
+            <input type="button" name="enviar" value="enviar" id="enviarRelacionC">
+        </div>
+        <div class="PlataformasJuegos">
+            <h2>Unir Plataformas</h2>
+            
+            <input type="button" name="enviar" value="enviar" id="enviarRelacionP">
+        </div>
+        <div class="eliminarJ">
+            <h2>Eliminar Juego</h2>
+            <label for="nombre">Nombre del juego</label>
+            <input type="text" name="nombre">
+            <input type="button" name="enviar" value="enviar" id="enviarJuego">
+        </div>
+    </div>
+
+    <script src="/Resource/js/unioncatjueg.js"></script>
+    <%- include('./partials/footer.ejs') %> 
