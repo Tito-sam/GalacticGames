@@ -1,3 +1,14 @@
+const locales = 'en-US'
+const options = {
+	style: 'currency',
+	currency: 'USD',
+	minimumFractionDigits: 2,
+	maximumFractionDigits: 2
+}
+
+const formatterDolar = new Intl.NumberFormat(locales, options);
+
+
 
 const obtenerJuegos = () => {
     const request = new Request('/games/rating/4', {
@@ -15,21 +26,21 @@ const obtenerJuegos = () => {
             divJuego.innerHTML = `
                     <a href="/info_j?id=${juego.j_id}"><img src="${juego.imagen}" alt="${juego.slug}"> </a>
                     <p>${juego.nombre}</p>
-                    <p>Precio: ${juego.precio} COP</p>
+                    <p>Precio: ${formatterDolar.format(juego.precio)} COP</p>
                     <p>Rating: ${juego.rating}</p> 
             `;
             mainVentas1.insertBefore(divJuego, botonUltimo);
         }
         seccion_1 = document.querySelectorAll('.section-1');
-        if (seccion_1.length > 3 ) {
-            for(let i = 0; i < 3; i++) {
+        if (seccion_1.length > 4 ) {
+            for(let i = 0; i < 4; i++) {
                 let ult = seccion_1[i];
                 ult.classList.remove('disactive');
             }
         } else {
             for(let i = 0; i <= seccion_1.length; i++){
                 let ult = seccion_1[i];
-                ult.classList.remove('disactive');s
+                ult.classList.remove('disactive');
             }
         }
     })
@@ -50,21 +61,21 @@ const obtenerJuegos = () => {
             divJuego.innerHTML = `
                     <a href="/info_j?id=${juego.j_id}"><img src="${juego.imagen}" alt="${juego.slug}"> </a>
                     <p>${juego.nombre}</p>
-                    <p>Precio: ${juego.precio} COP</p>
+                    <p>Precio: ${formatterDolar.format(juego.precio)} COP</p>
                     <p>Rating: ${juego.rating}</p> 
             `;
             mainVentas1.insertBefore(divJuego, botonUltimo);
         }
         seccion_2 = document.querySelectorAll('.section-2');
-        if (seccion_2.length > 3 ) {
-            for(let i = 0; i < 3; i++) {
+        if (seccion_2.length > 4 ) {
+            for(let i = 0; i < 4; i++) {
                 let ult = seccion_2[i];
                 ult.classList.remove('disactive');
             }
         } else {
             for(let i = 0; i <= seccion_1.length; i++){
                 let ult = seccion_2[i];
-                ult.classList.remove('disactive');s
+                ult.classList.remove('disactive');
             }
         }
     })

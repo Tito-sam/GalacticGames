@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 body {
@@ -184,31 +185,35 @@ header {
 }
 
 .main-principal h2 {
-    font-size: 30px;
+    font-size: 40px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
     margin: 10px;
     color: rgb(233, 233, 233);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #4a43cc;
 }
 .main-ventas {
-    width: 90%;
-    border-radius: 4px;
+    width: 100%;
+    border-radius: 20px;
     display: flex;
-    background-color: rgb(44, 52, 78);
-    padding: 30px;
-    margin: 10px 5px;
+    background-color: rgb(108, 128, 194);
+    margin: 40px 5px;
     justify-content: space-around;
 }
 
 .juegos {
     margin: 20px;
-    border: 2px solid white;
-    border-radius: 4px;
+    border-radius: 20px;
     background-color: rgb(31, 35, 49);
-    height: 400px;
+    height: 420px;
     width: 280px;
     transition: all 0.5s;
 }
 
 .juegos img {
+    border-radius: 20px 20px 0 0;
     min-width: 200px;
     width: 280px;
     height: 280px;
@@ -219,6 +224,7 @@ header {
     height: 430px;
     width: 300px;
     position: relative;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
 }
 
 .juegos:hover img{
@@ -227,7 +233,7 @@ header {
 }
 
 .juegos p {
-    color: #58c;
+    color:  white;
     font-size: 20px;
     padding: 5px;
 }
@@ -240,9 +246,11 @@ header {
 
 
 .boton-main {
-    background-color: rgba(80, 133, 202, 0.4);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgb(3, 32, 71);
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 40px;
     color: white;
     font-size: 30px;
@@ -334,9 +342,8 @@ footer ul li a:hover {
     width: 70%;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    border: 4px solid rgb(59, 59, 59);
-    margin: 20px;
-    border-radius: 5px;
+    margin: 50px 0;
+    border-radius: 20px;
     background-color: rgb(79, 111, 153);
 }
 
@@ -347,27 +354,28 @@ footer ul li a:hover {
 
 
 .imagen-juego img {
-    margin: 3px;
+    height: 100%;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 20px 0 0 20px;
 }
 
 .datos-juego {
     margin:10px;
     padding: 10px;
-    border: solid 3px rgba(35, 50, 99,0.3);
-    border-radius: 5px;
+    text-align: center;
+    justify-items: center;
 }
 
 .datos-juego h2 {
     text-align: center;
     margin: 10px;
-    font-size: 30px;
+    font-size: 50px;
+    color: #ddd;
 }
 
 .datos-juego p {
-    font-size: 20px;
-    color: #ddd;
+    font-size: 30px;
+    color: #000;
     margin: 30px 5px; 
 }
 

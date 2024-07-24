@@ -18,13 +18,15 @@
                     <a class="Login" href="/login">Iniciar Sesion</a>
                 <% } else { %>
                     <a href="/user" class="userNav" id="<%= user.user_id%>"><%= user.usuario%></a>
-                    <a class="btn-carrito" href="/carrito" >Carrito (<span id="carrito">0</span>)</a>
-                    <div class="carrito-content">
-                        <h2>Carrito</h2>
-                        <div class="productos-carrito">
+                    <a class="btn-carrito" href="/carrito">Carrito [<span id="carrito">0</span>]
+                        <div class="carrito-content">
+                            <h2>Carrito</h2>
+                            <div class="productos-carrito">
+                            </div>
+                            <button id="vaciar-carrito">Vaciar Carrito</button>
                         </div>
-                        <button id="vaciar-carrito">Vaciar Carrito</button>
-                    </div>
+                    </a>
+                    
                 <% } %>
                 
                 </div>

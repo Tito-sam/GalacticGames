@@ -3,6 +3,17 @@ const urlParams = new URLSearchParams(valores);
 
 const id_juego = urlParams.get('id');
 
+const locales = 'en-US'
+const options = {
+	style: 'currency',
+	currency: 'USD',
+	minimumFractionDigits: 2,
+	maximumFractionDigits: 2
+}
+
+const formatterDolar = new Intl.NumberFormat(locales, options);
+
+
 const ObtenerInfoJuegos = () => {
     const request = new Request(`/games/${id_juego}`, {
         method: 'GET'
@@ -17,7 +28,7 @@ const ObtenerInfoJuegos = () => {
             <div class="imagen-juego"><img src="${data.imagen}" alt="${data.slug}"></div>
             <div class="datos-juego">
                 <h2 class="nombre-juego">${data.nombre}</h2>
-                <p>Precio: <span id="precio">${data.precio}</span> COP</p>
+                <p>Precio: <span id="precio">${formatterDolar.format(data.precio)}</span> COP</p>
                 <p>Rating: <span id="rating">${data.rating}</span></p>
                 <button class="agregar-carrito info-ju" data-id="${data.j_id}">Add to carrito</button>
             </div>
@@ -41,14 +52,14 @@ const ObtenerInfoJuegos = () => {
                 divJuego.innerHTML = `
                         <a href="/info_j?id=${juego.j_id}"><img src="${juego.imagen}" alt="${juego.slug}"> </a>
                         <p>${juego.nombre}</p>
-                        <p>Precio: ${juego.precio} COP</p>
+                        <p>Precio: ${formatterDolar.format(juego.precio)} COP</p>
                         <p>Rating: ${juego.rating}</p> 
                 `;
                 mainVentas2.insertBefore(divJuego, botonUltimo);
             }
         }
         seccion_2 = document.querySelectorAll('.section-2');
-        if (seccion_2.length > 3 ) {
+        if (seccion_2.length > 4 ) {
             for(let i = 0; i < 3; i++) {
                 let ult = seccion_2[i];
                 ult.classList.remove('disactive');

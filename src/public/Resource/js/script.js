@@ -14,7 +14,7 @@ seccion_2 = document.querySelectorAll('.section-2');
 const mover_izq = (seccion, btn, btn2) => {
     for (let i = 0; i < seccion.length; i++) {
         let pri = seccion[i];
-        let ult_b = seccion[i+3];
+        let ult_b = seccion[i+4];
         let ult_v = seccion[seccion.length - 1];
         if (pri.classList.contains('disactive')) {
             continue;
@@ -56,7 +56,7 @@ const mover_der =  (seccion,btn, btn2) => {
     for (let i = 0; i < seccion.length; i++) {
         let pri = seccion[i];
         let seg = seccion[i+1];
-        let ult = seccion[i+3];
+        let ult = seccion[i+4];
         if (seg != undefined) {
             if (!pri.classList.contains('disactive')) {
                 btn.classList.add('btn-disactive');
