@@ -60,7 +60,7 @@ const ObtenerInfoJuegos = () => {
         }
         seccion_2 = document.querySelectorAll('.section-2');
         if (seccion_2.length > 4 ) {
-            for(let i = 0; i < 3; i++) {
+            for(let i = 0; i < 4; i++) {
                 let ult = seccion_2[i];
                 ult.classList.remove('disactive');
             }

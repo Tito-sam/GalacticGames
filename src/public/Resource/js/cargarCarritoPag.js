@@ -2,6 +2,16 @@
 const divProductos = document.querySelector('.carrito-juegos')
 const user = document.querySelector('.userNav');
 const user_id = user.id;
+const locales = 'en-US'
+const options = {
+	style: 'currency',
+	currency: 'USD',
+	minimumFractionDigits: 2,
+	maximumFractionDigits: 2
+}
+
+const formatterDolar = new Intl.NumberFormat(locales, options);
+
 
 const cargarJuegoCarritoPag = (id, j_id) => {
     const request = new Request(`/car/${id}/${j_id}`, {
@@ -50,7 +60,7 @@ const cargarHtmlCarritoPag = (id) => {
                             <a href="/info_j?id=${data2.j_id}" class="img-a-pag"><img src="${data2.imagen}" alt="${data2.slug}"></a>
                             <div class="p-pag">
                                 <p>${data2.nombre}</p>
-                                <p><span id="precio-juego">${data2.precio}</span> COP</p>
+                                <p><span id="precio-juego">${formatterDolar.format(data2.precio)}</span> COP</p>
                                 <p data-cant=${1}>Cantidad: <span class="cant-pag">${1}</p>
                             </div>
                             <a href="#" class="borrar-curso-pag" data-id="${data2.j_id}"> X </a>
@@ -87,7 +97,7 @@ const cargarHtmlCarritoPag = (id) => {
                                 <a href="/info_j?id=${data2.j_id}" class="img-a-pag"><img src="${data2.imagen}" alt="${data2.slug}"></a>
                                 <div class="p-pag">
                                     <p>${data2.nombre}</p>
-                                    <p><span id="precio-juego">${data2.precio}</span> COP</p>
+                                    <p><span id="precio-juego">${formatterDolar.format(data2.precio)}</span> COP</p>
                                     <p>Cantidad: <span class="cant-pag">${1}</p>
                                 </div>
                                 <a class="borrar-curso-pag" data-id="${data2.j_id}"> X </a>
@@ -211,6 +221,7 @@ const borrarJuegosCarrito = () => {
     }
 }
 contentCarrito.addEventListener('click', borrarJuegosCarrito)
+
 
 const btnPagar = document.querySelector('#pagar');
 

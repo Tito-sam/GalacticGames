@@ -90,7 +90,15 @@ const mover_der =  (seccion,btn, btn2) => {
 
 const ContentAgregarCarrito = document.getElementById('content-agregar-carrito');
 let carrito = document.getElementById('carrito');
+const locales = 'en-US'
+const options = {
+	style: 'currency',
+	currency: 'USD',
+	minimumFractionDigits: 2,
+	maximumFractionDigits: 2
+}
 
+const formatterDolar = new Intl.NumberFormat(locales, options);
 
 if (carrito) {
     let contentCarrito = document.querySelector('.productos-carrito');
@@ -128,9 +136,9 @@ if (carrito) {
                                 <a href="/info_j?id=${data2.j_id}" class="img-a"><img src="${data2.imagen}" alt="${data2.slug}"></a>
                                 <div class="p">
                                     <p>${data2.nombre}</p>
-                                    <p>${data2.precio}</p>
-                                    <p data-cant=${1}>Cantidad: <span class="cant">${1}</p>
-                                    <a href="#" class="borrar-curso" data-id="${data2.j_id}"> X </a>
+                                    <p>${formatterDolar.format(data2.precio)}</p>
+                                    <p data-cant=${1}>Cantidad: <span class="cant">${1}</span></p>
+                                    <a  class="borrar-juego" id="borrar-juego" data-id="${data2.j_id}"> X </a>
                                 </div>
                             `;
                             div.classList.add('p-car');
@@ -157,9 +165,9 @@ if (carrito) {
                                     <a href="/info_j?id=${data2.j_id}" class="img-a"><img src="${data2.imagen}" alt="${data2.slug}"></a>
                                     <div class="p">
                                         <p>${data2.nombre}</p>
-                                        <p>${data2.precio}</p>
-                                        <p data-cant=${1}>Cantidad: <span class="cant">${1}</p>
-                                        <a class="borrar-curso" data-id="${data2.j_id}"> X </a>
+                                        <p>${formatterDolar.format(data2.precio)}</p>
+                                        <p data-cant=${1}>Cantidad: <span class="cant">${1}</span></p>
+                                        <a class="borrar-juego" id="borrar-juego" data-id="${data2.j_id}"> X </a>
                                     </div>
                                 `;
                                 div.classList.add('p-car');
@@ -207,9 +215,9 @@ if (carrito) {
                 <a href="/info_j?id=${datos.id}" class="img-a"><img src="${datos.img}" alt="${datos.slug}"></a>
                 <div class="p">
                     <p>${datos.nombre}</p>
-                    <p>${datos.precio}</p>
-                    <p>Cantidad: <span class="cant">${1}</p>
-                    <a class="borrar-curso" data-id="${datos.j_id}"> X </a>
+                    <p>${formatterDolar.format(datos.precio)}</p>
+                    <p>Cantidad: <span class="cant">${1}</span></p>
+                    <a class="borrar-juego" id="borrar-juego" data-id="${datos.j_id}"> X </a>
                 </div>
             `;
             div.classList.add('p-car');
@@ -221,7 +229,7 @@ if (carrito) {
 
     const  eliminarJuego =  (e) => {
         e.preventDefault()
-        if(e.target.classList.contains('borrar-curso')) {
+        if(e.target.classList.contains('borrar-juego')) {
             const divJuego = e.target.parentElement.parentElement;
             const Juego_id = e.target.getAttribute('data-id');
             const user = document.querySelector('.userNav');
@@ -303,7 +311,7 @@ if (carrito) {
         .catch(err => console.log(err))
         limpiarHTML();
         carrito.innerText = '0';
-
+        window.location.href(window.location);
     }
 
     cargarPriCarrito(user_id);

@@ -1,13 +1,16 @@
 <%- include('./partials/header.ejs', {title:'Informacion'}) %> 
-        <div class="info-j" id="content-agregar-carrito">
-            
-        </div>
-        <h2>Mas Juegos</h2>
+        <main class="infoJ">
+            <article class="info-j" id="content-agregar-carrito">
+                
+            </article>
+            <article class="info-ad">
+                <h2>Mas Juegos</h2>
                 <div class="main-ventas mv2">
                     <button class="boton-main btn-izq-2" onclick="mover_izq(seccion_2, btn_izq2, btn_der2)"><i class="fa-solid fa-angle-left"></i></button>
                     
                     <button class="boton-main btn-der-2 btn-fin-2" onclick="mover_der(seccion_2, btn_der2, btn_izq2)"><i class="fa-solid fa-angle-right"></i></button>
                 </div>
-            </div>
+            </article>
+            </main>
         <script src="/Resource/js/cargarInfoJuego.js"></script>
 <%- include('./partials/footer.ejs') %>

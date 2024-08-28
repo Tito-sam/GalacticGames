@@ -19,6 +19,7 @@ body {
 }
 
 header {
+
     background-color: rgb(1, 75, 167);
     display: flex;
     flex-wrap: wrap;
@@ -58,13 +59,17 @@ header {
     display: inline-block;
     text-decoration: none;
     color: #ccc;
-    font-size: 40px;
+    font-size: 30px;
     padding: 30px 40px;
     background-color: #339;
-    border-radius: 30px;
-    margin: 10px 30px;
-    box-shadow: 0 0 10px 0 rgba(3,3,3,0.8);
+    text-align: center;
+}
 
+.menu a:first-child {
+    border-radius: 30px 0 0 30px;
+}
+.menu a:last-child {
+    border-radius: 0 30px 30px 0;
 }
 
 .menu a:hover {
@@ -74,22 +79,32 @@ header {
     background-color: #44a;
 }
 
+.carritoCant {
+    display: inline-block;
+    padding: 1px 4px;
+    border-radius: 20px;
+    border: white 2px solid;
+}
+
 .carrito-content {
     display: none;
     margin: 3px;
     position: absolute;
     right: 47px;
+    top: 349px;
     padding: 4px;
     width: 300px;
-    background-color: rgb(34, 58, 85);
+    cursor:auto;
+    background-color: #339;
     margin-top: 0;
     margin-left: 0;
-    transition: all 0.3s d;
+    transition: all 0.3s;
+    border-radius: 20px;
+    box-shadow: 0 0 3px rgb(0, 0, 0);
 }
 .carrito-content h2 {
     font-size: 35px;
     text-align: center;
-    border-bottom: 2px solid black;
     color: white;
     padding: 5px;
 }
@@ -126,6 +141,7 @@ header {
     padding: 0;
     display: inline-block;
     width: 100px;
+    padding: 0 10px;
     border-radius: 4px;
 }
 
@@ -133,40 +149,48 @@ header {
     padding: 0;
     margin: 0;
     display: inline-block;
-    width: 150px;
+    width: 100%;
     border-radius: 4px;
     align-items: center;
 }
 
-.p-car .borrar-curso {
+.p-car #borrar-juego {
     display: inline-block;
-    width: 30px;
-    border-radius: 4px;
+    width: 20px;
+    padding: 15px;
+    border-radius: 10px;
     border: solid 2px black;
+    background-color: rgb(86, 142, 214);
+    color: white;
 }
 
 .p-car .p {
-    height: 90%;
+    height: auto;
     border-left: 2px solid black;
     padding: 5px;
     color: white;
+}
+.p-car p {
+    font-size: 20px;
 }
 
 #vaciar-carrito {
     text-align: center;
     margin: 15px;
-    background-color: #58c;
+    background-color: rgb(86, 142, 214);
     display: inline-block;
     padding: 15px;
     font-size: 25px;
     width: 80%;
     color: white;
-    border-radius: 4px;
+    border-radius: 10px;
     margin-left: 30px;
+    border:none;
 }
 
 #vaciar-carrito:hover {
-    background-color: rgb(71, 110, 160);
+    transition: all 0.3s;
+    background-color: rgb(59, 132, 228);
     cursor: pointer;
 
 }
@@ -176,59 +200,57 @@ header {
 
 .main {
     display: flex;
-}
-
-.main-principal {
-    
-    padding: 20px 50px;
     width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-.main-principal h2 {
+.main h2 , .info-ad  h2 {
     font-size: 40px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
-    margin: 10px;
+    margin: 20px;
     color: rgb(233, 233, 233);
     text-align: center;
     padding: 10px;
     border-radius: 10px;
     background-color: #4a43cc;
+    width: 90%;
+
 }
 .main-ventas {
-    width: 100%;
+    width: 95%;
     border-radius: 20px;
     display: flex;
     background-color: rgb(108, 128, 194);
-    margin: 40px 5px;
+    margin: 20px;
     justify-content: space-around;
 }
 
 .juegos {
-    margin: 20px;
+    margin:  40px 0;
+    padding-bottom: 5px;
     border-radius: 20px;
     background-color: rgb(31, 35, 49);
-    height: 420px;
-    width: 280px;
+    height: 80%;
+    width: 240px;
     transition: all 0.5s;
 }
 
 .juegos img {
     border-radius: 20px 20px 0 0;
-    min-width: 200px;
-    width: 280px;
+    width: 100%;
     height: 280px;
     transition: all 0.5s;
+    object-fit: cover;
 }
 
 .juegos:hover {
-    height: 430px;
-    width: 300px;
+    width: 250px;
     position: relative;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
 }
 
 .juegos:hover img{
-    width: 300px;
     height: 300px;
 }
 
@@ -259,14 +281,16 @@ header {
 }
 
 .boton-main:hover {
-    background-color: rgba(69, 114, 173, 0.4);
+    background-color:#4a43cc;
     cursor: pointer;
     transition: all 0.5s;
 }
 
 .btn-disactive {
+    margin-top: 40px;
+    margin-bottom: 40px;
     transition: all 0.5s;
-    background-color:  rgba(8, 55, 121, 0.2);
+    background-color:  rgba(74, 89, 110, 0.438);
     color: #ccc;
     border: none;
     border-radius: 5px;
@@ -331,10 +355,18 @@ footer ul li a:hover {
 
 /* Info juego */
 
+
 .info-j {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+.info-ad {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -344,12 +376,13 @@ footer ul li a:hover {
     grid-template-columns: 2fr 1fr;
     margin: 50px 0;
     border-radius: 20px;
-    background-color: rgb(79, 111, 153);
+    background-color: rgb(31, 35, 49);
 }
 
 .imagen-juego {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 
@@ -375,7 +408,7 @@ footer ul li a:hover {
 
 .datos-juego p {
     font-size: 30px;
-    color: #000;
+    color: white;
     margin: 30px 5px; 
 }
 
@@ -387,13 +420,6 @@ footer ul li a:hover {
     border-radius: 5px;
     cursor: pointer;
     border: none;
-}
-.info-ad {
-    width: 80%;
-    padding: 20px;
-    background-color: rgb(151, 185, 229);
-    border-radius: 5px;
-    margin: 10px;
 }
 
 
@@ -637,23 +663,25 @@ footer ul li a:hover {
 
 .juegos-c, .juegos-pc {
     background-color: #58c;
-    border-radius: 5px;
-    width: 280px;
-    height: 400px;
+    border-radius: 10px;
+    width: 230px;
+    height: auto;
     transition: all 0.3s;
 }
 
 .juegos-c img, .juegos-pc img  {
-    width: 280px;
+    width: 230px;
     height: 250px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
     transition: all 0.3s;
 }
 .juegos-c:hover, .juegos-pc:hover {
-    width: 300px;
+    width: 240px;
 }
 
 .juegos-c:hover img, .juegos-pc:hover img {
-    width: 300px;
+    width: 240px;
 }
 
 .juegos-c p, .juegos-pc p {
@@ -671,6 +699,7 @@ footer ul li a:hover {
     background-color: #339;
     color: white;
     transition: all 0.3s;
+    
 }
 
 .juegos-c button:hover,.juegos-pc button:hover {

@@ -9,6 +9,16 @@ const limpiarDiv = () => {
     
 }
 
+const locales = 'en-US'
+const options = {
+	style: 'currency',
+	currency: 'USD',
+	minimumFractionDigits: 2,
+	maximumFractionDigits: 2
+}
+
+const formatterDolar = new Intl.NumberFormat(locales, options);
+
 const cargarJuegosC =  (request) => {
     limpiarDiv();
     fetch(request)
@@ -28,7 +38,7 @@ const cargarJuegosC =  (request) => {
                 <div class="juegos-c" >
                     <a href="/info_j?id=${data.j_id}"><img src="${data.imagen}" alt="${data.slug}"></a>
                     <p class="nombre-juego">${data.nombre}</p>
-                    <p>Precio: <span id="precio">${data.precio}</span> COP</p>
+                    <p>Precio: <span id="precio">${formatterDolar.format(data.precio)}</span> COP</p>
                     <p>Rating: <span id="rating">${data.rating}</span></p>
                     <button class="agregar-carrito" data-id="${data.j_id}">Add to carrito</button>
                 </div>
