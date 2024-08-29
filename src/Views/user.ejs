@@ -1,9 +1,9 @@
 <%- include('./partials/header.ejs', {title:'Usuario'}) %> 
-    <div class="user">
-        <div class="datos_usuario">
+    <main class="user">
+        <section class="datos_usuario">
             
-        </div>
-        <div class="actualizar_datos">
+        </section>
+        <section class="actualizar_datos">
             <h2>Actualizar datos</h2>
             <label for="usuario">Usuario</label>
             <input type="text" name="usuario" placeholder="usuario" id="usuario">
@@ -16,12 +16,12 @@
             <label for="password">Contraseña</label>
             <input type="password" name="password" id="password">
             <input type="button" value="Enviar" id="btn_actualizar_datos">
-        </div>
+        </section>
         <% if(user.tipo_user == 'admin') { %> 
         <a href="/crudJuegos" id="gestionar-juegos">Gestionar juegos</a>
         <% } %> 
-    <button id="Cerrar_Sesion">Cerrar Sesion</button>        
-    </div>
+        <button id="Cerrar_Sesion">Cerrar Sesion</button>        
+    </main>
     <script src="/Resource/js/cerrarSesion.js"></script>
     <script src="/Resource/js/actualizarDatos.js"></script>
 <%- include('./partials/footer.ejs') %> 

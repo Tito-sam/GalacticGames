@@ -1,16 +1,18 @@
 <%- include('./partials/header.ejs', {title:'Carrito'}) %>
 
-    <div class="main-carrito">
-        <h2>Carrito</h2>
-        <div class="content-carrito">
+    <main class="main-carrito">
+        <header>
+            <h2>Carrito</h2>
+        </header>
+        <section class="content-carrito">
             <h2>Productos</h2>
-            <div class="carrito-juegos">
+            <article class="carrito-juegos">
                 <p class="cantidad-juegos">No ha agregado nada al carrito.</p>
-            </div>
-            <h2>Total: <span id="cantidad-pagar">0</span> COP</h2>
+            </article>
+            <h3>Total: <span id="cantidad-pagar">0</span> COP</h3>
             <a href="#" id="pagar">Pagar</a>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <script src="/Resource/js/cargarCarritoPag.js"></script>
 <%- include('./partials/footer.ejs')  %> 

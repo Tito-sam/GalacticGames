@@ -1,40 +1,33 @@
 <%- include('./partials/header.ejs',{title:'Pc'}) %> 
-        <div class="main-consolas">
+        <main class="main-consolas">
             <h2>Juegos para PC</h2>
-                <div class="menu-clasificacion">
+                <section class="menu-clasificacion">
                     <ul class="menu-ul">
                         <li class="li-clasificacion">
-                            <button class="btn-clasificacion" id="btn-categoria">
-                                Categoria
-                                <ul class="lista-clasificacion" id="ul-categoria">
+                            <select class="select-clasificacion" id="select-categoria">
+                                <option value="0" class="">Categoria</option>
+                            </select>
+                        </li>
+                        <li class="li-clasificacion">
+                            <select class="select-clasificacion" id="select-so">
+                                <option value="0">S.O</option>
 
-                                </ul>
-                            </button>
+                            </select> 
                         </li>
                         <li class="li-clasificacion">
-                            <button class="btn-clasificacion" id="btn-consola-so">
-                                S.O
-                                <ul class="lista-clasificacion" id="ul-so">
-                                                                   
-                                </ul>
-                            </button>  
-                        </li>
-                        <li class="li-clasificacion">
-                            <button class="btn-clasificacion" id="btn-precio">
-                                Precio
-                                <ul class="lista-clasificacion" id="ul-precio">
-                                    <li class="li-precio" id="bajo"><a>Menos de 100000 COP</a></li>
-                                    <li class="li-precio" id="medio_bajo"><a>Entre 100000 COP y 25000 COP</a></li>
-                                    <li class="li-precio" id="medio_alto"><a>Entre 250000 COP y 400000 COP</a></li>
-                                    <li class="li-precio" id="alto"><a>Mas de 400000 COP</a></li>                                  
-                                </ul>
-                            </button>
+                            <select class="select-clasificacion" id="select-precio">
+                                <option value="0" class="li-precio" id="precio">Precio</option>
+                                <option value="bajo" class="li-precio" id="bajo">Menos de 100000 COP</option>
+                                <option value="medio_bajo" class="li-precio" id="medio_bajo">Entre 100000 COP y 25000 COP</option>
+                                <option value="medio_alto" class="li-precio" id="medio_alto">Entre 250000 COP y 400000 COP</option>
+                                <option value="alto" class="li-precio" id="alto">Mas de 400000 COP</option>                                  
+                            </select>
                         </li>
                     </ul>
-                </div>
-                <div class="juegos-consolas j-pc" id="content-agregar-carrito">
+                </section>
+                <section class="juegos-consolas j-pc" id="content-agregar-carrito">
                     
-                </div>
-        </div>
+                </section>
+            </main>
         <script src="/Resource/js/cargarJuegosPc.js"></script>
 <%- include('./partials/footer.ejs') %> 

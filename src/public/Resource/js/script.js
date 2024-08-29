@@ -90,15 +90,8 @@ const mover_der =  (seccion,btn, btn2) => {
 
 const ContentAgregarCarrito = document.getElementById('content-agregar-carrito');
 let carrito = document.getElementById('carrito');
-const locales = 'en-US'
-const options = {
-	style: 'currency',
-	currency: 'USD',
-	minimumFractionDigits: 2,
-	maximumFractionDigits: 2
-}
 
-const formatterDolar = new Intl.NumberFormat(locales, options);
+
 
 if (carrito) {
     let contentCarrito = document.querySelector('.productos-carrito');
@@ -133,7 +126,7 @@ if (carrito) {
                         .then(data2 => {
                             const div = document.createElement('div');
                             div.innerHTML =`
-                                <a href="/info_j?id=${data2.j_id}" class="img-a"><img src="${data2.imagen}" alt="${data2.slug}"></a>
+                                <a href="/info_j?id=${data2.j_id}" id="img-a" class="img-a"><img src="${data2.imagen}" alt="${data2.slug}"></a>
                                 <div class="p">
                                     <p>${data2.nombre}</p>
                                     <p>${formatterDolar.format(data2.precio)}</p>
@@ -162,7 +155,7 @@ if (carrito) {
                             } else {
                                 const div = document.createElement('div');
                                 div.innerHTML =`
-                                    <a href="/info_j?id=${data2.j_id}" class="img-a"><img src="${data2.imagen}" alt="${data2.slug}"></a>
+                                    <a href="/info_j?id=${data2.j_id}" id="img-a" class="img-a"><img src="${data2.imagen}" alt="${data2.slug}"></a>
                                     <div class="p">
                                         <p>${data2.nombre}</p>
                                         <p>${formatterDolar.format(data2.precio)}</p>
@@ -212,7 +205,7 @@ if (carrito) {
             carrito.innerText = `${datosCarrito}`;
             const div = document.createElement('div');
             div.innerHTML =`
-                <a href="/info_j?id=${datos.id}" class="img-a"><img src="${datos.img}" alt="${datos.slug}"></a>
+                <a href="/info_j?id=${datos.id}" id="img-a" class="img-a"><img src="${datos.img}" alt="${datos.slug}"></a>
                 <div class="p">
                     <p>${datos.nombre}</p>
                     <p>${formatterDolar.format(datos.precio)}</p>

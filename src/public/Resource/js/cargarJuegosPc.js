@@ -66,12 +66,12 @@ const cargarCategorias = () => {
     .then((res) => res.json())
     .then(data => {
         const categorias = data;
-        const listaCategorias = document.querySelector('#ul-categoria');
+        const listaCategorias = document.querySelector('#select-categoria');
         categorias.forEach(categoria => {
-            const cat = document.createElement('li');
-            cat.classList.add('li_categoria');
-            cat.innerHTML = `<a>${categoria.nombre}</a>`;
-            cat.id = `${categoria.c_id}`;
+            const cat = document.createElement('option');
+            cat.classList.add('opcion_categoria');
+            cat.innerHTML = `${categoria.nombre}`;
+            cat.value = `${categoria.c_id}`;
             listaCategorias.appendChild(cat);
         });
     })
@@ -89,12 +89,12 @@ const cargarPlataformas = () => {
     .then((res) => res.json())
     .then(data => {
         const plataformas = data;
-        const listaSO = document.querySelector('#ul-so');
+        const listaSO = document.querySelector('#select-so');
         for(let i = 0; i< 3; i++) {
-            const plat = document.createElement('li');
-            plat.classList.add('li_plataforma');
-            plat.innerHTML = `<a>${plataformas[i].nombre}</a>`;
-            plat.id = `${plataformas[i].id_p}`;
+            const plat = document.createElement('option');
+            plat.classList.add('opcion_plataforma');
+            plat.innerHTML = `${plataformas[i].nombre}`;
+            plat.value = `${plataformas[i].id_p}`;
             listaSO.appendChild(plat);
         }
     })
@@ -104,15 +104,15 @@ const cargarPlataformas = () => {
 cargarPlataformas();
 
 
-const listaCategorias = document.querySelector('#ul-categoria');
-const listaSO = document.querySelector('#ul-so');
-const listaPrecio = document.querySelector('#ul-precio');
+const listaCategorias = document.querySelector('#select-categoria');
+const listaSO = document.querySelector('#select-so');
+const listaPrecio = document.querySelector('#select-precio');
 
 
 const buscarCategorias = (e) => {
     e.preventDefault();
-    if(e.target.classList.contains('li_categoria')) {
-        let categoria_id = e.target.id;
+    if(e.target.value =! 0) {
+        let categoria_id = e.target.value;
         const request = new Request(`/games/cargarJC/${categoria_id}`, {
             method: 'GET'
         });
@@ -122,8 +122,8 @@ const buscarCategorias = (e) => {
 
 const buscarSO = (e) => {
     e.preventDefault();
-    if(e.target.classList.contains('li_plataforma')) {
-        let plataforma_id = e.target.id;
+    if(e.target.value != 0) {
+        let plataforma_id = e.target.value;
         const request = new Request(`/games/cargarJP/${plataforma_id}`, {
             method: 'GET'
         });
@@ -133,8 +133,8 @@ const buscarSO = (e) => {
 
 const buscarPrecio = (e) => {
     e.preventDefault();
-    if(e.target.classList.contains('li-precio')) {
-        let precio = e.target.id;
+    if(e.target.value != 0) {
+        let precio = e.target.value;
         let request;
         switch (precio) {
             case 'bajo':

@@ -83,17 +83,23 @@ header {
     display: inline-block;
     padding: 1px 4px;
     border-radius: 20px;
-    border: white 2px solid;
+    border: none;
+    background-color: whitesmoke;
+    color: #333;
+}
+
+.btn-carrito {
+    position: relative;
 }
 
 .carrito-content {
     display: none;
     margin: 3px;
     position: absolute;
-    right: 47px;
-    top: 349px;
+    right: 0px;
+    top: 100px;
     padding: 4px;
-    width: 300px;
+    width: 400px;
     cursor:auto;
     background-color: #339;
     margin-top: 0;
@@ -125,32 +131,29 @@ header {
 }
 
 .p-car {
-    border: 2px solid black;
     display: grid;
     grid-template-columns: 1fr 2fr;
     width: 100%;
     align-items: center;
 }
 
-.menu .a-car  {
-    display: inline-block;
-    padding: 0;
-}
+
 
 .p-car img {
     padding: 0;
     display: inline-block;
-    width: 100px;
-    padding: 0 10px;
-    border-radius: 4px;
-}
-
-.p-car .img-a {
-    padding: 0;
-    margin: 0;
-    display: inline-block;
     width: 100%;
     border-radius: 4px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p-car #img-a {
+    padding: 0;
+    margin: 5px;
+    display: inline-block;
+    height: auto;
+    border-radius: 0px;
     align-items: center;
 }
 
@@ -204,6 +207,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 94px;
 }
 .main h2 , .info-ad  h2 {
     font-size: 40px;
@@ -217,6 +221,7 @@ header {
     width: 90%;
 
 }
+
 .main-ventas {
     width: 95%;
     border-radius: 20px;
@@ -301,8 +306,11 @@ header {
     border: 1px solid grey;
 }
 
+/* Footer */
 
 footer {
+    position: fixed;
+    bottom: 0;
     width: 100%;
     background-color: rgb(22, 59, 105);
 }
@@ -336,6 +344,7 @@ footer ul li a:hover {
 
 .main-info {
     padding: 20px 100px;
+    margin-bottom: 94px;
 }
 
 .info {
@@ -349,8 +358,8 @@ footer ul li a:hover {
 
 .info h2 {
     text-align: center;
-    
 }
+
 
 
 /* Info juego */
@@ -432,6 +441,7 @@ footer ul li a:hover {
     padding: 5px;
     border-radius: 3px;
     grid-template-rows: 80px 3fr;
+    margin-bottom: 94px;
 }
 
 .main-carrito h2 {
@@ -548,6 +558,7 @@ footer ul li a:hover {
 /* Consolas y PC */
 
 .main-consolas {
+    margin-bottom: 94px;
     width: 100%;
     display:grid;
     justify-content: center;
@@ -583,7 +594,7 @@ footer ul li a:hover {
     text-align: center;
 }
 
-.menu-clasificacion .btn-clasificacion {
+.menu-clasificacion .select-clasificacion {
     display: inline-block;
     width: auto;
     border: none;
@@ -596,7 +607,7 @@ footer ul li a:hover {
     transition: all 0.3s;
 }
 
-.btn-clasificacion:hover {
+.select-clasificacion:hover {
     background-color: rgb(32, 32, 161);
     color: #ccc;
     cursor: pointer;
@@ -677,12 +688,9 @@ footer ul li a:hover {
     transition: all 0.3s;
 }
 .juegos-c:hover, .juegos-pc:hover {
-    width: 240px;
+    box-shadow: 0 0 5px #000;
 }
 
-.juegos-c:hover img, .juegos-pc:hover img {
-    width: 240px;
-}
 
 .juegos-c p, .juegos-pc p {
     font-size: 20px;
@@ -814,6 +822,7 @@ footer ul li a:hover {
     border-radius: 5px;
     padding: 20px;
     align-items: center;
+    margin-bottom: 94px;
 }
 
 .datos_usuario h2{
