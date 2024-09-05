@@ -1,12 +1,10 @@
-const locales = 'en-US'
-const options = {
-	style: 'currency',
-	currency: 'USD',
-	minimumFractionDigits: 2,
-	maximumFractionDigits: 2
-}
+const mainVentas1 = document.querySelector('.mv1');
+const botonUltimo1 = document.querySelector('.btn-fin-1');
+const mainVentas2 = document.querySelector('.mv2');
+const botonUltimo2 = document.querySelector('.btn-fin-2');
 
-const formatterDolar = new Intl.NumberFormat(locales, options);
+var tamWidth = mainVentas1.offsetWidth;
+var cantjuegos = parseInt((tamWidth / 240) - 1);
 
 
 
@@ -17,8 +15,6 @@ const obtenerJuegos = () => {
     fetch(request)
     .then((res) => res.json())
     .then(data => {
-        const mainVentas1 = document.querySelector('.mv1');
-        const botonUltimo = document.querySelector('.btn-fin-1');
         for (let i = 0; i < 10; i++) {
             const juego = data[i];
             divJuego = document.createElement('div');
@@ -29,11 +25,11 @@ const obtenerJuegos = () => {
                     <p>Precio: ${formatterDolar.format(juego.precio)} COP</p>
                     <p>Rating: ${juego.rating}</p> 
             `;
-            mainVentas1.insertBefore(divJuego, botonUltimo);
+            mainVentas1.insertBefore(divJuego, botonUltimo1);
         }
         seccion_1 = document.querySelectorAll('.section-1');
-        if (seccion_1.length > 4 ) {
-            for(let i = 0; i < 4; i++) {
+        if (mainVentas1.offsetWidth < seccion_1.length * 240) {
+            for(let i = 0; i < (mainVentas1.offsetWidth / 240) - 2; i++) {
                 let ult = seccion_1[i];
                 ult.classList.remove('disactive');
             }
@@ -52,8 +48,6 @@ const obtenerJuegos = () => {
     fetch(request2)
     .then((res) => res.json())
     .then(data => {
-        const mainVentas1 = document.querySelector('.mv2');
-        const botonUltimo = document.querySelector('.btn-fin-2');
         for (let i = 0; i < 10; i++) {
             const juego = data[i];
             divJuego = document.createElement('div');
@@ -64,16 +58,16 @@ const obtenerJuegos = () => {
                     <p>Precio: ${formatterDolar.format(juego.precio)} COP</p>
                     <p>Rating: ${juego.rating}</p> 
             `;
-            mainVentas1.insertBefore(divJuego, botonUltimo);
+            mainVentas2.insertBefore(divJuego, botonUltimo2);
         }
         seccion_2 = document.querySelectorAll('.section-2');
-        if (seccion_2.length > 4 ) {
-            for(let i = 0; i < 4; i++) {
+        if (mainVentas2.offsetWidth < seccion_2.length * 240) {
+            for(let i = 0; i < (mainVentas2.offsetWidth / 240) - 2; i++) {
                 let ult = seccion_2[i];
                 ult.classList.remove('disactive');
             }
         } else {
-            for(let i = 0; i <= seccion_1.length; i++){
+            for(let i = 0; i <= seccion_2.length; i++){
                 let ult = seccion_2[i];
                 ult.classList.remove('disactive');
             }

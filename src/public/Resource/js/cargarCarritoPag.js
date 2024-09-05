@@ -2,15 +2,6 @@
 const divProductos = document.querySelector('.carrito-juegos')
 const user = document.querySelector('.userNav');
 const user_id = user.id;
-const locales = 'en-US'
-const options = {
-	style: 'currency',
-	currency: 'USD',
-	minimumFractionDigits: 2,
-	maximumFractionDigits: 2
-}
-
-const formatterDolar = new Intl.NumberFormat(locales, options);
 
 
 const cargarJuegoCarritoPag = (id, j_id) => {
@@ -35,7 +26,7 @@ const  limpiarHTMLPag = () => {
     textoProductos.classList.remove('disactive')
     divProductos.appendChild(textoProductos);
 }
-
+    
 const cargarHtmlCarritoPag = (id) => {
     limpiarHTMLPag();
     const request = new Request(`/car/${id}`, {

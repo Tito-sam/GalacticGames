@@ -3,15 +3,6 @@ const urlParams = new URLSearchParams(valores);
 
 const id_juego = urlParams.get('id');
 
-const locales = 'en-US'
-const options = {
-	style: 'currency',
-	currency: 'USD',
-	minimumFractionDigits: 2,
-	maximumFractionDigits: 2
-}
-
-const formatterDolar = new Intl.NumberFormat(locales, options);
 
 
 const ObtenerInfoJuegos = () => {

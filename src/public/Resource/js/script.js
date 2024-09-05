@@ -11,10 +11,22 @@ seccion_1 = document.querySelectorAll('.section-1');
 seccion_2 = document.querySelectorAll('.section-2');
 
 
+const locales = 'en-US'
+const options = {
+	style: 'currency',
+	currency: 'USD',
+	minimumFractionDigits: 2,
+	maximumFractionDigits: 2
+}
+
+const formatterDolar = new Intl.NumberFormat(locales, options);
+
+
 const mover_izq = (seccion, btn, btn2) => {
+
     for (let i = 0; i < seccion.length; i++) {
         let pri = seccion[i];
-        let ult_b = seccion[i+4];
+        let ult_b = seccion[i];
         let ult_v = seccion[seccion.length - 1];
         if (pri.classList.contains('disactive')) {
             continue;
@@ -56,7 +68,8 @@ const mover_der =  (seccion,btn, btn2) => {
     for (let i = 0; i < seccion.length; i++) {
         let pri = seccion[i];
         let seg = seccion[i+1];
-        let ult = seccion[i+4];
+        let ult = seccion[i+parseInt(cantjuegos)];
+        console.log(cantjuegos);
         if (seg != undefined) {
             if (!pri.classList.contains('disactive')) {
                 btn.classList.add('btn-disactive');
